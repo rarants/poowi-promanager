@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class DashboardController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("dashboard");
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
         QuadrosDAO qdr_dao = new QuadrosDAO();
         ArrayList<Quadro> quadros = null;

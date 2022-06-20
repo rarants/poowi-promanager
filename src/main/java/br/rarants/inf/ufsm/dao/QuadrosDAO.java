@@ -101,4 +101,18 @@ public class QuadrosDAO {
         return null;
     }
 
+    public Boolean deleteQuadro(Integer id, Integer id_usuario) throws ClassNotFoundException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try (Connection con = Conexao.getConnection()) {
+            stmt = con.prepareStatement("DELETE FROM quadros WHERE id = ? AND id_usuario = ?");
+            stmt.setInt(1, id);
+            stmt.setInt(2, id_usuario);
+            stmt.executeUpdate();
+            return true;
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        return false;
+    }
 }

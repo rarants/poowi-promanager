@@ -45,7 +45,7 @@
         </div>
         <br />
         <div class="center">
-            <a href="quadro?route=quadros" class="primary">Voltar para lista de quadros</a>
+            <a href="quadro?acao=quadros" class="primary">Voltar para lista de quadros</a>
         </div>
     </form>
 </div>

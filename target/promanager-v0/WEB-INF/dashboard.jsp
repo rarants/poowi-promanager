@@ -32,14 +32,14 @@
                     <p>Privado</p>
                 </c:otherwise>
             </c:choose>
-            <a href="quadro?route=ver&id=${quadro.id}" class="primary">Ver quadro</a>
-            <a href="quadro?route=editar&id=${quadro.id}" class="primary">Editar quadro</a>
+            <a href="quadro?acao=ver&id=${quadro.id}" class="primary">Ver quadro</a>
+            <a href="quadro?acao=excluir&id=${quadro.id}" class="primary">Excluir quadro</a>
+            <a href="quadro?acao=editar&id=${quadro.id}" class="primary">Editar quadro</a>
         </div>
     </c:forEach>
 
-
     <div class="center">
-        <a href="quadro?route=novo" class="primary">Novo quadro</a>
+        <a href="quadro?acao=novo" class="primary">Novo quadro</a>
     </div>
 </body>
 </html>
