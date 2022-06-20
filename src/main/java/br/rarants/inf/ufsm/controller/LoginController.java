@@ -1,5 +1,7 @@
 package br.rarants.inf.ufsm.controller;
 
+import br.rarants.inf.ufsm.dao.QuadrosDAO;
+import br.rarants.inf.ufsm.model.Quadro;
 import br.rarants.inf.ufsm.model.Usuario;
 import br.rarants.inf.ufsm.service.UsuarioService;
 
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet("login")
 public class LoginController extends HttpServlet {
@@ -31,6 +34,17 @@ public class LoginController extends HttpServlet {
         if (usuario != null) {
             HttpSession session = req.getSession();
             session.setAttribute("usuario_logado", usuario);
+
+            ArrayList<Quadro> quadros = null;
+            try {
+                QuadrosDAO qdr_dao = new QuadrosDAO();
+                quadros = qdr_dao.getQuadros(usuario);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            session.setAttribute("quadros", quadros);
             rd = req.getRequestDispatcher("/WEB-INF/dashboard.jsp");
         } else {
             req.setAttribute("error", "Usuário e/ou senha incorretos!");

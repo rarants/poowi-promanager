@@ -5,13 +5,41 @@
   Time: 21:08
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <html>
 <head>
     <title>Meus quadros</title>
+    <style>
+        .card {
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>Bem vindo! ${usuario_logado.nome}</h1>
+    <p>Quadros</p>
+    <c:forEach items="${quadros}" var="quadro">
+        <div class="card">
+            <h3>${quadro.titulo}</h3>
+            <p>${quadro.descricao}</p>
+            <c:choose>
+                <c:when test="${quadro.publico == 'true'}">
+                    <p>Público</p>
+                </c:when>
+                <c:otherwise>
+                    <p>Privado</p>
+                </c:otherwise>
+            </c:choose>
+            <a href="quadro?route=ver&id=${quadro.id}" class="primary">Ver quadro</a>
+            <a href="quadro?route=editar&id=${quadro.id}" class="primary">Editar quadro</a>
+        </div>
+    </c:forEach>
+
+
+    <div class="center">
+        <a href="quadro?route=novo" class="primary">Novo quadro</a>
+    </div>
 </body>
 </html>

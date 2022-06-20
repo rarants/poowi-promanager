@@ -7,21 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfc0a7f-0736-47fa-81da-79ad5e3d1b9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bdscript.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/connection/Conexao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/QuadroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/QuadrosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/service/QuadroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_quadro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_quadro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/quadro.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/promanager-v0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -77,6 +76,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.rarants.inf.ufsm.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\raiss\PSWI\promanagerv0\src\main\webapp\WEB-INF" />
     </key>
@@ -242,7 +244,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655588809010</updated>
-      <workItem from="1655588813490" duration="10036000" />
+      <workItem from="1655588813490" duration="28709000" />
     </task>
     <servers />
   </component>
