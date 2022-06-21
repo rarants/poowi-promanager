@@ -1,5 +1,6 @@
 package br.rarants.inf.ufsm.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Quadro {
@@ -8,7 +9,8 @@ public class Quadro {
     private String descricao;
     private Boolean publico;
     private Usuario usuario;
-    private List<Etiqueta> etiquetaList;
+    private ArrayList<Etiqueta> etiquetaArrayList;
+    private ArrayList<Coluna> colunaArrayList;
 
     public int getId() {
         return id;
@@ -50,12 +52,20 @@ public class Quadro {
         this.usuario = usuario;
     }
 
-    public List<Etiqueta> getEtiquetaList() {
-        return etiquetaList;
+    public ArrayList<Etiqueta> getEtiquetaArrayList() {
+        return etiquetaArrayList;
     }
 
-    public void setEtiquetaList(List<Etiqueta> etiquetaList) {
-        this.etiquetaList = etiquetaList;
+    public void setEtiquetaArrayList(ArrayList<Etiqueta> etiquetaArrayList) {
+        this.etiquetaArrayList = etiquetaArrayList;
+    }
+
+    public ArrayList<Coluna> getColunaArrayList() {
+        return colunaArrayList;
+    }
+
+    public void setColunaArrayList(ArrayList<Coluna> colunaArrayList) {
+        this.colunaArrayList = colunaArrayList;
     }
 
     @Override
@@ -66,7 +76,8 @@ public class Quadro {
                 ", descricao='" + descricao + '\'' +
                 ", publico=" + publico +
                 ", usuario=" + usuario.toString() +
-                ", etiquetaList=" + etiquetaList +
+                ", etiquetaList=" + etiquetaArrayList +
+                ", colunaArrayList=" + colunaArrayList +
                 '}';
     }
 }

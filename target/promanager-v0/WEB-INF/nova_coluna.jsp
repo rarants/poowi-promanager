@@ -10,27 +10,19 @@
 <%@page isELIgnored="false" %>
 <html>
 <head>
-    <title>Novo quadro</title>
+    <title>Nova coluna</title>
 </head>
 <body>
-<h1>Novo quadro</h1>
+<h1>Nova coluna</h1>
 <p>
     Preencha as informações abaixo
 </p>
 <div class="container">
-    <form action="quadro" method="post" class="formulario child">
+    <form action="coluna" method="post" class="formulario child">
         <div class="grid-container">
             <div class="titulo left">
                 <label for="titulo">Título</label>
-                <input type="text" placeholder="Digite o título do quadro" name="titulo" required/>
-            </div>
-            <div class="descricao left">
-                <label for="descricao">Descrição</label>
-                <input type="textarea" placeholder="Informe uma descrição" name="descricao" required/>
-            </div>
-            <div class="publico left">
-                <label for="publico">Público</label>
-                <input type="checkbox" name="publico"/>
+                <input type="text" placeholder="Digite o título da coluna" name="titulo" required/>
             </div>
         </div>
         <router:if test="${not empty error}">
@@ -41,12 +33,11 @@
             </div>
         </router:if>
         <div class="center">
-            <input type="submit" value="Adicionar quadro" name="quadro" class="button primary"/>
-            <a href="router?acao=cadastrar" class="primary">Adicionar quadro</a>
+            <input type="submit" value="Adicionar coluna" name="coluna" class="button primary"/>
         </div>
         <br />
         <div class="center">
-            <a href="quadro?acao=quadros" class="primary">Voltar para lista de quadros</a>
+            <a href="quadro?acao=quadro" class="primary">Voltar para o quadro</a>
         </div>
     </form>
 </div>

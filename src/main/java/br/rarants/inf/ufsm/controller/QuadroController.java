@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 @WebServlet("quadro")
 public class QuadroController extends HttpServlet {
-    @Override
+/*  @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String acao = req.getParameter("acao");
         String id = req.getParameter("id");
@@ -59,8 +59,11 @@ public class QuadroController extends HttpServlet {
                 req.getRequestDispatcher(uri).forward(req, resp);
             }
         }
+        else {
+            req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
+        }
     }
-
+*/
     private void getQuadro(HttpServletRequest req, Integer id) {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
         Quadro quadro = new Quadro();
@@ -79,17 +82,25 @@ public class QuadroController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
-        String uri = "/WEB-INF/dashboard.jsp";
-        QuadrosDAO qdr_dao = new QuadrosDAO();
-        ArrayList<Quadro> quadros = null;
-        try {
-            quadros = qdr_dao.getQuadros(usuario);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+        String acao = req.getParameter("acao");
+        String id = req.getParameter("id");
+
+        if (acao.equals("quadros")) {
+            Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
+            String uri = "/WEB-INF/dashboard.jsp";
+            QuadrosDAO qdr_dao = new QuadrosDAO();
+            ArrayList<Quadro> quadros = null;
+            try {
+                quadros = qdr_dao.getQuadros(usuario);
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            }
+            req.getSession().setAttribute("quadros", quadros);
+            req.getRequestDispatcher(uri).forward(req, resp);
+        } else {
+            getQuadro(req, Integer.parseInt(id));
+            req.getRequestDispatcher("/WEB-INF/quadro.jsp").forward(req, resp);
         }
-        req.getSession().setAttribute("quadros", quadros);
-        req.getRequestDispatcher(uri).forward(req, resp);
     }
 
     @Override

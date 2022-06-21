@@ -1,10 +1,13 @@
 package br.rarants.inf.ufsm.model;
 
+import java.util.ArrayList;
+
 public class Coluna {
     private int id;
     private String titulo;
     private Integer ordem;
     private Quadro quadro;
+    private ArrayList<Cartao> cartaoArrayList;
 
     public int getId() {
         return id;
@@ -38,13 +41,22 @@ public class Coluna {
         this.quadro = quadro;
     }
 
+    public ArrayList<Cartao> getCartaoArrayList() {
+        return cartaoArrayList;
+    }
+
+    public void setCartaoArrayList(ArrayList<Cartao> cartaoArrayList) {
+        this.cartaoArrayList = cartaoArrayList;
+    }
+
     @Override
     public String toString() {
         return "Coluna{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", ordem=" + ordem +
-                ", quadro=" + quadro.toString() +
+                ", quadro=" + quadro.getId() +
+                ", cartaoArrayList=" + cartaoArrayList +
                 '}';
     }
 }

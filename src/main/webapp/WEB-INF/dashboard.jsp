@@ -21,10 +21,10 @@
     <h1>Bem vindo! ${usuario_logado.nome}</h1>
     <p>Quadros</p>
     <div class="center">
-        <a href="quadro?acao=novo" class="primary">Novo quadro</a>
+        <a href="router?acao=novo-quadro" class="primary">Novo quadro</a>
     </div>
     <div class="center">
-        <a href="quadro?acao=sair" class="primary">Sair</a>
+        <a href="router?acao=sair" class="primary">Sair</a>
     </div>
     <c:forEach items="${quadros}" var="quadro">
         <div class="card">
@@ -38,9 +38,9 @@
                     <p>Privado</p>
                 </c:otherwise>
             </c:choose>
-            <a href="quadro?acao=ver&id=${quadro.id}" class="primary">Ver quadro</a>
-            <a href="quadro?acao=excluir&id=${quadro.id}" class="primary">Excluir quadro</a>
-            <a href="quadro?acao=editar&id=${quadro.id}" class="primary">Editar quadro</a>
+            <a href="router?acao=quadro&id=${quadro.id}" class="primary">Ver quadro</a>
+            <a href="router?acao=excluir-quadro&id=${quadro.id}" class="primary">Excluir quadro</a>
+            <a href="router?acao=editar-quadro&id=${quadro.id}" class="primary">Editar quadro</a>
         </div>
     </c:forEach>
 
