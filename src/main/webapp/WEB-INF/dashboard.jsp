@@ -20,6 +20,12 @@
 <body>
     <h1>Bem vindo! ${usuario_logado.nome}</h1>
     <p>Quadros</p>
+    <div class="center">
+        <a href="quadro?acao=novo" class="primary">Novo quadro</a>
+    </div>
+    <div class="center">
+        <a href="quadro?acao=sair" class="primary">Sair</a>
+    </div>
     <c:forEach items="${quadros}" var="quadro">
         <div class="card">
             <h3>${quadro.titulo}</h3>
@@ -38,8 +44,5 @@
         </div>
     </c:forEach>
 
-    <div class="center">
-        <a href="quadro?acao=novo" class="primary">Novo quadro</a>
-    </div>
 </body>
 </html>
