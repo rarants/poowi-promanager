@@ -49,7 +49,7 @@
             </div>
         </c:if>
         <div class="center">
-            <input type="submit" value="Atualizar" name="acao" class="button primary"/>
+            <input type="submit" value="Atualizar" name="atualizar" class="button primary"/>
         </div>
         <br />
         <div class="center">

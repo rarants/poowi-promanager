@@ -51,7 +51,7 @@ public class QuadrosDAO {
                 cartoes.add(cartao);
                 coluna.setCartaoArrayList(cartoes);
             }
-        } else if (!coluna.getTitulo().equals("")){
+        } else if (coluna.getId() != 0){
             colunas.add(coluna);
             if (findCartaoInList(cartao, coluna.getCartaoArrayList()) != true && cartao.getId()  != 0) {
                 ArrayList<Cartao> cartoes = coluna.getCartaoArrayList();

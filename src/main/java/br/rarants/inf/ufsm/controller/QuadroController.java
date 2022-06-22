@@ -83,7 +83,7 @@ public class QuadroController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String acao = req.getParameter("acao");
-        String id = req.getParameter("id");
+        String id = req.getParameter("id-quadro");
 
         if (acao.equals("quadros")) {
             Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
@@ -105,35 +105,42 @@ public class QuadroController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
-        String uri = "";
-        RequestDispatcher rd;
-
-        Quadro novo_quadro = new Quadro();
-        novo_quadro.setTitulo(req.getParameter("titulo"));
-        novo_quadro.setDescricao(req.getParameter("descricao"));
-        novo_quadro.setUsuario(usuario);
-        if (req.getParameter("publico") == null || !req.getParameter("publico").equals("on"))
-            novo_quadro.setPublico(false);
-        else
-            novo_quadro.setPublico(true);
-
-        QuadrosDAO qdr_dao = new QuadrosDAO();
-        try {
-            novo_quadro = qdr_dao.postQuadro(novo_quadro);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (novo_quadro != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("quadro", novo_quadro);
-            uri = "/WEB-INF/quadro.jsp";
+        if (req.getParameter("atualizar") != null) {
+            doPut(req, resp);
+        } else if(req.getParameter("excluir") != null) {
+            doDelete(req, resp);
         } else {
-            req.setAttribute("error", "Erro ao cadastrar o quadro!");
-            uri = "/WEB-INF/novo_quadro.jsp";
+            Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
+
+            String uri = "";
+            RequestDispatcher rd;
+
+            Quadro novo_quadro = new Quadro();
+            novo_quadro.setTitulo(req.getParameter("titulo"));
+            novo_quadro.setDescricao(req.getParameter("descricao"));
+            novo_quadro.setUsuario(usuario);
+            if (req.getParameter("publico") == null || !req.getParameter("publico").equals("on"))
+                novo_quadro.setPublico(false);
+            else
+                novo_quadro.setPublico(true);
+
+            QuadrosDAO qdr_dao = new QuadrosDAO();
+            try {
+                novo_quadro = qdr_dao.postQuadro(novo_quadro);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            if (novo_quadro != null) {
+                HttpSession session = req.getSession();
+                session.setAttribute("quadro", novo_quadro);
+                uri = "/WEB-INF/quadro.jsp";
+            } else {
+                req.setAttribute("error", "Erro ao cadastrar o quadro!");
+                uri = "/WEB-INF/novo_quadro.jsp";
+            }
+            rd = req.getRequestDispatcher(uri);
+            rd.forward(req, resp);
         }
-        rd = req.getRequestDispatcher(uri);
-        rd.forward(req, resp);
     }
 
     @Override
@@ -175,7 +182,7 @@ public class QuadroController extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
-        String id = req.getParameter("id");
+        String id = req.getParameter("id-quadro");
         QuadrosDAO qdr_dao = new QuadrosDAO();
         Boolean deleted = false;
         try {

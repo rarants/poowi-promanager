@@ -36,7 +36,7 @@ public class RouterController extends HttpServlet {
             e.printStackTrace();
         }
         HttpSession session = req.getSession();
-        session.setAttribute("quadro", quadro);
+        session.setAttribute("coluna", coluna);
     }
 
     private void getQuadro(HttpServletRequest req, Integer id) {
@@ -73,7 +73,9 @@ public class RouterController extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
         String acao = req.getParameter("acao");
-        String id = req.getParameter("id");
+        String id_quadro = req.getParameter("id-quadro");
+        String id_coluna = req.getParameter("id-coluna");
+        String id_cartao = req.getParameter("id-cartao");
         String uri = "/";
         System.out.println(acao);
         if (req.getSession().getAttribute("usuario_logado") != null) {
@@ -84,7 +86,7 @@ public class RouterController extends HttpServlet {
             } else if(acao.equals("editar-coluna")) {
                 // redireciona para edição de coluna
                 try {
-                    getColuna(req, Integer.parseInt(id));
+                    getColuna(req, Integer.parseInt(id_coluna));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
@@ -96,7 +98,7 @@ public class RouterController extends HttpServlet {
                 // exclui coluna e redireciona
                 doDelete(req, resp);
             } else if(acao.equals("quadro")) {
-                getQuadro(req, Integer.parseInt(id));
+                getQuadro(req, Integer.parseInt(id_quadro));
                 uri = "/WEB-INF/quadro.jsp";
                 req.getRequestDispatcher(uri).forward(req, resp);
             } else if(acao.equals("novo-quadro")) {
@@ -105,18 +107,16 @@ public class RouterController extends HttpServlet {
                 req.getRequestDispatcher(uri).forward(req, resp);
             } else if(acao.equals("editar-quadro")) {
                 // redireciona para edição de quadros
-                getQuadro(req, Integer.parseInt(id));
+                getQuadro(req, Integer.parseInt(id_quadro));
                 uri = "/WEB-INF/editar_quadro.jsp";
                 req.getRequestDispatcher(uri).forward(req, resp);
             } else if(acao.equals("excluir-quadro")) {
                 // exclui quadro e redireciona
-                doDelete(req, resp);
-            } else {
                 Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
                 QuadrosDAO qdr_dao = new QuadrosDAO();
                 Boolean deleted = false;
                 try {
-                    deleted = qdr_dao.deleteQuadro(Integer.parseInt(id), usuario.getId());
+                    deleted = qdr_dao.deleteQuadro(Integer.parseInt(id_quadro), usuario.getId());
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -125,6 +125,10 @@ public class RouterController extends HttpServlet {
                 }
                 req.setAttribute("route", "quadros");
                 getQuadros(req, resp);
+                req.getRequestDispatcher("/WEB-INF/dashboard.jsp").forward(req, resp);
+            } else {
+                getQuadros(req, resp);
+                req.getRequestDispatcher("/WEB-INF/dashboard.jsp").forward(req, resp);
             }
         }
         else {

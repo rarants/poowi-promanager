@@ -38,9 +38,9 @@
                     <p>Privado</p>
                 </c:otherwise>
             </c:choose>
-            <a href="router?acao=quadro&id=${quadro.id}" class="primary">Ver quadro</a>
-            <a href="router?acao=excluir-quadro&id=${quadro.id}" class="primary">Excluir quadro</a>
-            <a href="router?acao=editar-quadro&id=${quadro.id}" class="primary">Editar quadro</a>
+            <a href="router?acao=quadro&id-quadro=${quadro.id}" class="primary">Ver quadro</a>
+            <a href="router?acao=excluir-quadro&id-quadro=${quadro.id}" class="primary">Excluir quadro</a>
+            <a href="router?acao=editar-quadro&id-quadro=${quadro.id}" class="primary">Editar quadro</a>
         </div>
     </c:forEach>
 

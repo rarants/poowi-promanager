@@ -112,28 +112,34 @@ public class ColunaController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
-        String uri = "";
-        RequestDispatcher rd;
-
-        Coluna nova_coluna = new Coluna();
-        nova_coluna.setTitulo(req.getParameter("titulo"));
-        nova_coluna.setQuadro(quadro);
-        ColunasDAO col_dao = new ColunasDAO();
-        try {
-            nova_coluna = col_dao.postColuna(nova_coluna);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (nova_coluna != null) {
-            getQuadro(req, quadro.getId());
-            uri = "/WEB-INF/quadro.jsp";
+        if (req.getParameter("atualizar") != null) {
+            doPut(req, resp);
+        } else if(req.getParameter("excluir") != null) {
+            doDelete(req, resp);
         } else {
-            req.setAttribute("error", "Erro ao cadastrar a coluna!");
-            uri = "/WEB-INF/nova_coluna.jsp";
+            Quadro   quadro = (Quadro) req.getSession().getAttribute("quadro");
+            String uri = "";
+            RequestDispatcher rd;
+
+            Coluna nova_coluna = new Coluna();
+            nova_coluna.setTitulo(req.getParameter("titulo"));
+            nova_coluna.setQuadro(quadro);
+            ColunasDAO col_dao = new ColunasDAO();
+            try {
+                nova_coluna = col_dao.postColuna(nova_coluna);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            if (nova_coluna != null) {
+                getQuadro(req, quadro.getId());
+                uri = "/WEB-INF/quadro.jsp";
+            } else {
+                req.setAttribute("error", "Erro ao cadastrar a coluna!");
+                uri = "/WEB-INF/nova_coluna.jsp";
+            }
+            rd = req.getRequestDispatcher(uri);
+            rd.forward(req, resp);
         }
-        rd = req.getRequestDispatcher(uri);
-        rd.forward(req, resp);
     }
 
     @Override
@@ -168,12 +174,13 @@ public class ColunaController extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
-        String id = req.getParameter("id");
+        Coluna coluna = (Coluna) req.getSession().getAttribute("coluna");
+
         ColunasDAO col_dao = new ColunasDAO();
         Boolean deleted = false;
         String uri = "";
         try {
-            deleted = col_dao.deleteColuna(Integer.parseInt(id));
+            deleted = col_dao.deleteColuna(coluna.getId());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

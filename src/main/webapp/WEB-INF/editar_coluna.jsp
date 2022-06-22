@@ -33,12 +33,13 @@
             </div>
         </c:if>
         <div class="center">
-            <input type="submit" value="Atualizar" name="acao" class="button primary"/>
-            <a href="router?acao=excluir-coluna&id=${coluna.id}" class="primary">Excluir coluna</a>
+            <input type="submit" value="Atualizar coluna" name="atualizar" class="button primary"/>
+            <input type="submit" value="Excluir coluna" name="excluir" class="button primary"/>
         </div>
         <br />
+        ${quadro}
         <div class="center">
-            <a href="quadro?acao=quadro" class="primary">Voltar para o quadro</a>
+            <a href="quadro?acao=quadro&id-quadro=${quadro.id}" class="primary">Voltar para o quadro</a>
         </div>
     </form>
 </div>

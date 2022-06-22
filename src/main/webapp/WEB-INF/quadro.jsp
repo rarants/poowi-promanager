@@ -21,6 +21,7 @@
 ${quadro}
 <h1>${quadro.titulo}</h1>
 <h3>${quadro.descricao}</h3>
+${quadro.colunaArrayList}
 
 <div class="center">
     <a href="quadro?acao=quadros" class="primary">Voltar para lista de quadros</a>
@@ -28,15 +29,8 @@ ${quadro}
 
 <div class="center">
     <a href="router?acao=nova-coluna" class="primary">Nova coluna</a>
-</div>
-<c:if test="${quadro.colunaArrayList.size() == 0}">
-    <div class="container center">
-        <h2 class="child error">
-            <b>Ainda não foram adicionadas colunas ao quadro.</b>
-        </h2>
-    </div>
-</c:if>
-<c:forEach items="${quadros.colunaArrayList}" var="coluna">
+</div
+<c:forEach items="${quadro.colunaArrayList}" var="coluna">
     <div class="card">
         <h3>${coluna.titulo}</h3>
         <c:forEach items="${coluna.cartaoArrayList}" var="cartao">
@@ -52,14 +46,10 @@ ${quadro}
                         <p>Pendente</p>
                     </c:otherwise>
                 </c:choose>
-                <a href="router?acao=cartao&id=${quadro.id}" class="primary">Ver cartao</a>
-                <a href="router?acao=excluir-cartao&id=${quadro.id}" class="primary">Excluir cartao</a>
-                <a href="router?acao=editar-cartao&id=${quadro.id}" class="primary">Editar cartao</a>
+                <a href="router?acao=editar-cartao&id-cartao=${quadro.id}" class="primary">Editar cartao</a>
             </div>
-            <a href="router?acao=coluna&id=${coluna.id}" class="primary">Ver coluna</a>
-            <a href="router?acao=excluir-coluna&id=${coluna.id}" class="primary">Excluir coluna</a>
-            <a href="router?acao=editar-coluna&id=${coluna.id}" class="primary">Editar coluna</a>
         </c:forEach>
+        <a href="router?acao=editar-coluna&id-coluna=${coluna.id}" class="primary">Editar coluna</a>
     </div>
 </c:forEach>
 </body>

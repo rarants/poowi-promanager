@@ -42,7 +42,6 @@
         </router:if>
         <div class="center">
             <input type="submit" value="Adicionar quadro" name="quadro" class="button primary"/>
-            <a href="router?acao=cadastrar" class="primary">Adicionar quadro</a>
         </div>
         <br />
         <div class="center">
