@@ -44,10 +44,8 @@
                     <div class="text-center">
                         <div class="row">
                             <router:if test="${not empty error}">
-                                <div class="container center">
-                                    <h2 class="child error">
-                                        <b>${error}</b>
-                                    </h2>
+                                <div class="alert alert-danger" role="alert">
+                                    <b>${error}</b>
                                 </div>
                             </router:if>
                         </div>
