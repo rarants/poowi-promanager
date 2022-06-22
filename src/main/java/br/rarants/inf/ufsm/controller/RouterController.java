@@ -98,11 +98,12 @@ public class RouterController extends HttpServlet {
         String id_coluna = req.getParameter("id-coluna");
         String id_cartao = req.getParameter("id-cartao");
         String uri = "/";
-        System.out.println(id_cartao);
-        System.out.println(acao);
 
         if (req.getSession().getAttribute("usuario_logado") != null) {
-            if(acao.equals("nova-coluna")) {
+            if(acao.equals("sair")) {
+                req.getSession().invalidate();
+                req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
+            } else if(acao.equals("nova-coluna")) {
                 // redireciona para cadastro de coluna
                 uri = "/WEB-INF/nova_coluna.jsp";
                 req.getRequestDispatcher(uri).forward(req, resp);

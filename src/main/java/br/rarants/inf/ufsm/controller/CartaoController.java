@@ -55,8 +55,14 @@ public class CartaoController extends HttpServlet {
                 novo_cartao.setStatus(false);
             else
                 novo_cartao.setStatus(true);
-            Date dataInicio = req.getParameter("dataInicio") != null ? Date.valueOf(req.getParameter("dataInicio")) : null;
-            Date dataTermino = req.getParameter("dataTermino") != null ? Date.valueOf(req.getParameter("dataTermino")) : null;
+
+            Date dataInicio = null, dataTermino = null;
+            if (req.getParameter("dataInicio") != null && !req.getParameter("dataInicio").equals("")) {
+                dataInicio = Date.valueOf(req.getParameter("dataInicio"));
+            }
+            if (req.getParameter("dataTermino") != null && !req.getParameter("dataTermino").equals("")) {
+                dataTermino = Date.valueOf(req.getParameter("dataTermino"));
+            }
             novo_cartao.setDataInicio(dataInicio);
             novo_cartao.setDataTermino(dataTermino);
             novo_cartao.setColuna(coluna);
