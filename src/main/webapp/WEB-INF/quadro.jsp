@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Ver quadro</title>
     <style>
         .card {
@@ -17,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body lang="pt-BR">
 ${quadro}
 <h1>${quadro.titulo}</h1>
 <h3>${quadro.descricao}</h3>
