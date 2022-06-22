@@ -57,6 +57,7 @@
                         </div>
                         <div class="col-6 mb-3">
                             <label for="publico" class="form-label">Público</label>
+                            <br />
                             <input type="checkbox" class="form-check-input" name="publico"/>
                         </div>
                         <div class="col-12 mb-3">

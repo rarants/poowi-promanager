@@ -7,23 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfc0a7f-0736-47fa-81da-79ad5e3d1b9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_cartao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_cartao.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/nova_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/nova_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_cartao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_cartao.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/editar_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/editar_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/nova_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/nova_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/novo_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/novo_quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/register.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +235,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655588809010</updated>
       <workItem from="1655588813490" duration="38386000" />
-      <workItem from="1655768722782" duration="40695000" />
+      <workItem from="1655768722782" duration="40768000" />
     </task>
     <servers />
   </component>
