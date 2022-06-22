@@ -19,51 +19,6 @@ import java.util.ArrayList;
 
 @WebServlet("quadro")
 public class QuadroController extends HttpServlet {
-/*  @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String acao = req.getParameter("acao");
-        String id = req.getParameter("id");
-        String uri = "/";
-        System.out.println(acao + " " + req.getSession().getAttribute("usuario_logado"));
-        if (req.getSession().getAttribute("usuario_logado") != null) {
-            if (acao.equals("sair")) {
-                req.getSession().invalidate();
-                System.out.println("depois " + req.getSession().getAttribute("usuario_logado"));
-                uri = "/WEB-INF/login.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else if (acao.equals("quadros")) {
-                // busca quadros e redireciona
-                doGet(req, resp);
-            } else if(acao.equals("novo")) {
-                // redireciona para cadastro de quadros
-                uri = "/WEB-INF/novo_quadro.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else if(acao.equals("editar")) {
-                // redireciona para edição de quadros
-                getQuadro(req, Integer.parseInt(id));
-                uri = "/WEB-INF/editar_quadro.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else if(acao.equals("cadastrar")) {
-                // cadastra quadro e redireciona
-                doPost(req, resp);
-            } else if(acao.equals("atualizar")) {
-                // atualiza quadro e redireciona
-                doPut(req, resp);
-            } else if(acao.equals("excluir")) {
-                // exclui quadro e redireciona
-                doDelete(req, resp);
-            } else {
-                // busca quadro e redireciona
-                getQuadro(req, Integer.parseInt(id));
-                uri = "/WEB-INF/quadro.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            }
-        }
-        else {
-            req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
-        }
-    }
-*/
     private void getQuadro(HttpServletRequest req, Integer id) {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
         Quadro quadro = new Quadro();
@@ -173,9 +128,7 @@ public class QuadroController extends HttpServlet {
             e.printStackTrace();
         }
         if (quadro_atualizado != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("quadro", quadro_atualizado);
-            uri = "/WEB-INF/quadro.jsp";
+            uri = "/WEB-INF/dashboard.jsp";
         } else {
             req.setAttribute("error", "Erro ao atualizar o quadro!");
             uri = "/WEB-INF/editar_quadro.jsp";
