@@ -89,8 +89,7 @@ public class CartaoController extends HttpServlet {
         String uri = "";
 
         Cartao cartao_atualizado = new Cartao();
-        cartao_atualizado.setTitulo(req.getParameter("titulo").equals("") ? cartao.getTitulo() : req.getParameter("titulo"));
-
+        cartao_atualizado.setTitulo(req.getParameter("titulo"));
         if (req.getParameter("status") == null || !req.getParameter("status").equals("on"))
             cartao_atualizado.setStatus(false);
         else
@@ -108,8 +107,8 @@ public class CartaoController extends HttpServlet {
         cartao_atualizado.setId(cartao.getId());
         cartao_atualizado.setColuna(coluna);
         CartoesDAO col_dao = new CartoesDAO();
-
         try {
+            System.out.println("Cartão atualizado: " + cartao_atualizado.toString());
             cartao_atualizado = col_dao.putCartao(cartao_atualizado);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

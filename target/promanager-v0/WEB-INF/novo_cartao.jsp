@@ -66,11 +66,11 @@
                     </div>
                     <div class="col-6 mb-3">
                         <label for="dataInicio" class="form-label">Data de início</label>
-                        <input type="date" class="form-control" name="data_inicio" />
+                        <input type="date" class="form-control" name="dataInicio" />
                     </div>
                     <div class="col-6 mb-3">
                         <label for="dataTermino" class="form-label">Data de término</label>
-                        <input type="date" class="form-control" name="data_termino" />
+                        <input type="date" class="form-control" name="dataTermino" />
                     </div>
                 </div>
                 <div class="text-center mt-3">

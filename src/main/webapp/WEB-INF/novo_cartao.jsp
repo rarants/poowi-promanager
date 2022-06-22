@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar bg-dark text-white">
         <div class="container-fluid">
-            <a class="navbar-brand text-white">Meus quadros</a>
+            <a class="navbar-brand text-white">Novo cartão</a>
             <div class="d-flex">
                 <a href="router?acao=sair" class="btn btn-danger btn-sm mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -66,11 +66,11 @@
                     </div>
                     <div class="col-6 mb-3">
                         <label for="dataInicio" class="form-label">Data de início</label>
-                        <input type="date" class="form-control" name="data_inicio" />
+                        <input type="date" class="form-control" name="dataInicio" />
                     </div>
                     <div class="col-6 mb-3">
                         <label for="dataTermino" class="form-label">Data de término</label>
-                        <input type="date" class="form-control" name="data_termino" />
+                        <input type="date" class="form-control" name="dataTermino" />
                     </div>
                 </div>
                 <div class="text-center mt-3">

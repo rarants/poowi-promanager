@@ -40,7 +40,7 @@ public class CartoesDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Coluna coluna = cartao.getColuna();
-        System.out.println(cartao.toString());
+        System.out.println("POST -->" + cartao.toString());
         try (Connection con = Conexao.getConnection()) {
             stmt = con.prepareStatement("INSERT INTO cartoes VALUES (DEFAULT, ?, ?, DEFAULT, ?, ?, DEFAULT, ?, ?)");
             stmt.setString(1, cartao.getTitulo());
@@ -71,7 +71,7 @@ public class CartoesDAO {
                 "data_inicio = ?, " +
                 "data_termino = ? " +
                 "WHERE id = ?";
-        System.out.println(cartao.toString());
+        System.out.println("PUT -->" + cartao.toString());
         try (Connection con = Conexao.getConnection()) {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, cartao.getTitulo());
@@ -79,7 +79,7 @@ public class CartoesDAO {
             stmt.setString(3, cartao.getDescricao());
             stmt.setDate(4, cartao.getDataInicio());
             stmt.setDate(5, cartao.getDataTermino());
-            stmt.setInt(6, cartao.getColuna().getId());
+            stmt.setInt(6, cartao.getId());
             stmt.executeUpdate();
             rs = stmt.getGeneratedKeys();
             while (rs.next()) {

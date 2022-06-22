@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar bg-dark text-white">
         <div class="container-fluid">
-            <a class="navbar-brand text-white">Meus quadros</a>
+            <a class="navbar-brand text-white">Editar quadro</a>
             <div class="d-flex">
                 <a href="router?acao=sair" class="btn btn-danger btn-sm mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">

@@ -49,33 +49,23 @@ public class QuadrosDAO {
         Coluna founded = findColunaInList(coluna, colunas);
 
         if (founded != null) {
-            System.out.println("Coluna já adicionada (" + founded.getTitulo() + ")");
             if (findCartaoInList(cartao, founded.getCartaoArrayList()) != null && cartao.getId()  != 0) {
-                System.out.println("Lista de cartões já adicionados: " + founded.getCartaoArrayList());
-                System.out.println("Cartão não adicionado. Adicionar cartão... (" + cartao.getTitulo() + ")");
                 ArrayList<Cartao> cartoes = founded.getCartaoArrayList();
                 cartoes.add(cartao);
                 founded.setCartaoArrayList(cartoes);
                 for(Coluna cl : colunas) {
                     if(cl.getId() == coluna.getId()) {
-                        System.out.println("Coluna já adicionada... adicionando cartão...");
                         cl.setCartaoArrayList(cartoes);
-                        System.out.println("Lista de cartões atualizada... " + cl.getCartaoArrayList());
                     }
                 }
             }
         } else if (coluna.getId() != 0){
-            System.out.println("Coluna ainda não adicionada.");
             coluna.setCartaoArrayList(new ArrayList<Cartao>());
             if (cartao.getId() != 0) {
-                System.out.println("Cartão ainda não adicionado. Adicionando cartão... (" + cartao.getTitulo() + ")");
                 ArrayList<Cartao> cartoes = new ArrayList<>();
                 cartoes.add(cartao);
-                System.out.println("Adicionado");
                 coluna.setCartaoArrayList(cartoes);
-                System.out.println("Adicionado cartão. Lista atualizada: " + coluna.getCartaoArrayList());
             }
-            System.out.println("Adicionando coluna... (" + coluna.getTitulo() + ")");
             colunas.add(coluna);
         }
         return colunas;

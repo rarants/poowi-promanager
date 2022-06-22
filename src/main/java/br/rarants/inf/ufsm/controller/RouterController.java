@@ -98,7 +98,7 @@ public class RouterController extends HttpServlet {
         String id_coluna = req.getParameter("id-coluna");
         String id_cartao = req.getParameter("id-cartao");
         String uri = "/";
-        System.out.println(id_quadro);
+        System.out.println(id_cartao);
         System.out.println(acao);
 
         if (req.getSession().getAttribute("usuario_logado") != null) {
