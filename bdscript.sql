@@ -11,14 +11,14 @@ create table quadros(
 	descricao text not null,
 	publico boolean default false,
 	id_usuario integer,
-	foreign key (id_usuario) references usuarios(id)
+	foreign key (id_usuario) references usuarios(id) on delete cascade
 );
 create table colunas(
 	id serial primary key,
 	titulo varchar(50) not null,
 	ordem integer,
 	id_quadro integer,
-	foreign key (id_quadro) references quadros(id)
+	foreign key (id_quadro) references quadros(id) on delete cascade
 );
 create table cartoes(
 	id serial primary key,
@@ -30,19 +30,19 @@ create table cartoes(
 	data_atualizacao date not null default current_timestamp,
 	id_coluna integer,
 	descricao text,
-	foreign key (id_coluna) references colunas(id)
+	foreign key (id_coluna) references colunas(id) on delete cascade
 );
 create table etiquetas(
 	id serial primary key,
 	titulo varchar(50) not null,
 	cor varchar(50) default 'deafult',
 	id_quadro integer,
-	foreign key (id_quadro) references quadros(id)
+	foreign key (id_quadro) references quadros(id) on delete cascade
 );
 create table cartao_etiquetas(
 	id serial primary key,
 	id_etiqueta integer,
 	id_cartao integer,
-	foreign key (id_etiqueta) references etiquetas(id),
-	foreign key (id_cartao) references cartoes(id)
+	foreign key (id_etiqueta) references etiquetas(id) on delete cascade,
+	foreign key (id_cartao) references cartoes(id) on delete cascade
 );
