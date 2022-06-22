@@ -29,6 +29,7 @@ create table cartoes(
 	data_termino date,
 	data_atualizacao date not null default current_timestamp,
 	id_coluna integer,
+	descricao text,
 	foreign key (id_coluna) references colunas(id)
 );
 create table etiquetas(

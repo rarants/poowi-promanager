@@ -36,8 +36,9 @@ ${quadro.colunaArrayList}
         <c:forEach items="${coluna.cartaoArrayList}" var="cartao">
             <div class="card">
                 <h3>${cartao.titulo}</h3>
-                <p>${cartao.data_inicio}</p>
-                <p>${cartao.data_termino}</p>
+                <h5>${cartao.descricao}</h5>
+                <p>${cartao.dataInicio}</p>
+                <p>${cartao.dataTermino}</p>
                 <c:choose>
                     <c:when test="${cartao.status == 'true'}">
                         <p>Finalizado</p>
@@ -46,12 +47,13 @@ ${quadro.colunaArrayList}
                         <p>Pendente</p>
                     </c:otherwise>
                 </c:choose>
-                <a href="router?acao=excluir-cartao&id-cartao=${quadro.id}" class="primary">Excluir cartao</a>
-                <a href="router?acao=editar-cartao&id-cartao=${quadro.id}" class="primary">Editar cartao</a>
+                <a href="router?acao=editar-cartao&id-coluna=${coluna.id}&id-cartao=${cartao.id}" class="primary">Editar cartao</a>
             </div>
         </c:forEach>
-        <a href="router?acao=excluir-coluna&id-coluna=${coluna.id}" class="primary">Excluir coluna</a>
         <a href="router?acao=editar-coluna&id-coluna=${coluna.id}" class="primary">Editar coluna</a>
+        <div class="center">
+            <a href="router?acao=novo-cartao&id-coluna=${coluna.id}" class="primary">Novo cartão</a>
+        </div>
     </div>
 </c:forEach>
 </body>

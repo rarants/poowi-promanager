@@ -7,26 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfc0a7f-0736-47fa-81da-79ad5e3d1b9e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/CartaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/CartoesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/service/CartaoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_cartao.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_cartao.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bdscript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bdscript.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/ColunaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/ColunaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/QuadroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/QuadroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/RouterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/controller/RouterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/QuadrosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/dao/QuadrosDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editar_quadro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/novo_quadro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/model/Cartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/rarants/inf/ufsm/model/Cartao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/quadro.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/ColunaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/ColunaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/QuadroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/QuadroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/controller/DashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/dao/QuadrosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/rarants/inf/ufsm/dao/QuadrosDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/promanager-v0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/ColunaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/ColunaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/QuadroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/QuadroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/controller/DashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/dao/QuadrosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/classes/br/rarants/inf/ufsm/dao/QuadrosDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/editar_coluna.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/editar_coluna.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/novo_quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/novo_quadro.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/quadro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/promanager-v0/WEB-INF/quadro.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,8 +86,8 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.rarants.inf.ufsm.controller" />
-      <recent name="br.rarants.inf.ufsm.dao" />
       <recent name="br.rarants.inf.ufsm.service" />
+      <recent name="br.rarants.inf.ufsm.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\raiss\PSWI\promanagerv0\src\main\webapp\WEB-INF" />
@@ -255,7 +255,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655588809010</updated>
       <workItem from="1655588813490" duration="38386000" />
-      <workItem from="1655768722782" duration="20821000" />
+      <workItem from="1655768722782" duration="29947000" />
     </task>
     <servers />
   </component>

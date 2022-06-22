@@ -2,9 +2,11 @@ package br.rarants.inf.ufsm.controller;
 
 import br.rarants.inf.ufsm.dao.ColunasDAO;
 import br.rarants.inf.ufsm.dao.QuadrosDAO;
+import br.rarants.inf.ufsm.model.Cartao;
 import br.rarants.inf.ufsm.model.Coluna;
 import br.rarants.inf.ufsm.model.Quadro;
 import br.rarants.inf.ufsm.model.Usuario;
+import br.rarants.inf.ufsm.service.CartaoService;
 import br.rarants.inf.ufsm.service.ColunaService;
 import br.rarants.inf.ufsm.service.QuadroService;
 
@@ -21,6 +23,24 @@ import java.util.ArrayList;
 
 @WebServlet("router")
 public class RouterController extends HttpServlet {
+    private void getCartão(HttpServletRequest req, Integer id) throws SQLException, ClassNotFoundException {
+        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
+        Coluna coluna = (Coluna) req.getSession().getAttribute("coluna");
+
+        Cartao cartao = new Cartao();
+        cartao.setId(id);
+        cartao.setColuna(coluna);
+        try {
+            cartao = new CartaoService().owner(usuario, cartao);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        HttpSession session = req.getSession();
+        session.setAttribute("cartao", cartao);
+    }
+
     private void getColuna(HttpServletRequest req, Integer id) throws SQLException, ClassNotFoundException {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
         Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
@@ -53,6 +73,7 @@ public class RouterController extends HttpServlet {
         }
         HttpSession session = req.getSession();
         session.setAttribute("quadro", quadro);
+        System.out.println(quadro.toString());
     }
 
     private void getQuadros(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -77,7 +98,9 @@ public class RouterController extends HttpServlet {
         String id_coluna = req.getParameter("id-coluna");
         String id_cartao = req.getParameter("id-cartao");
         String uri = "/";
+        System.out.println(id_quadro);
         System.out.println(acao);
+
         if (req.getSession().getAttribute("usuario_logado") != null) {
             if(acao.equals("nova-coluna")) {
                 // redireciona para cadastro de coluna
@@ -126,7 +149,26 @@ public class RouterController extends HttpServlet {
                 req.setAttribute("route", "quadros");
                 getQuadros(req, resp);
                 req.getRequestDispatcher("/WEB-INF/dashboard.jsp").forward(req, resp);
-            } else {
+            } else if(acao.equals("novo-cartao")) {
+                // redireciona para cadastro de cartões
+                try {
+                    getColuna(req, Integer.parseInt(id_coluna));
+                } catch (SQLException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                uri = "/WEB-INF/novo_cartao.jsp";
+                req.getRequestDispatcher(uri).forward(req, resp);
+            } else if(acao.equals("editar-cartao")) {
+                // redireciona para edição de cartão
+                try {
+                    getColuna(req, Integer.parseInt(id_coluna));
+                    getCartão(req, Integer.parseInt(id_cartao));
+                } catch (SQLException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                uri = "/WEB-INF/editar_cartao.jsp";
+                req.getRequestDispatcher(uri).forward(req, resp);
+            }  else {
                 getQuadros(req, resp);
                 req.getRequestDispatcher("/WEB-INF/dashboard.jsp").forward(req, resp);
             }

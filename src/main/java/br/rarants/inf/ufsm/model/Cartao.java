@@ -106,7 +106,6 @@ public class Cartao {
                 ", dataInicio=" + dataInicio +
                 ", dataTermino=" + dataTermino +
                 ", dataUpdate=" + dataUpdate +
-                ", coluna=" + coluna.toString() +
                 ", etiquetaList=" + etiquetaList +
                 '}';
     }

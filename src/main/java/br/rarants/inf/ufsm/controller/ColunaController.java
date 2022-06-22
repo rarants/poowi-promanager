@@ -21,24 +21,6 @@ import java.util.ArrayList;
 
 @WebServlet("coluna")
 public class ColunaController extends HttpServlet {
-    /*private void getColuna(HttpServletRequest req, Integer id) throws SQLException, ClassNotFoundException {
-        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
-        Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
-        Coluna coluna = new Coluna();
-        coluna.setId(id);
-        coluna.setQuadro(quadro);
-        try {
-            coluna = new ColunaService().owner(usuario, coluna);
-            quadro = new QuadroService().owner(usuario, quadro);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        HttpSession session = req.getSession();
-        session.setAttribute("quadro", quadro);
-    }
-    */
     private void getQuadro(HttpServletRequest req, Integer id) {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
         Quadro quadro = new Quadro();
@@ -54,61 +36,6 @@ public class ColunaController extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("quadro", quadro);
     }
-
-    /*@Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Quadro quadro = (Quadro) req.getSession().getAttribute("quadro");
-        String acao = req.getParameter("acao");
-        String id = req.getParameter("id");
-        String uri = "/";
-        System.out.println("Ação : " + acao);
-        if (req.getSession().getAttribute("usuario_logado") != null) {
-            if(acao.equals("nova")) {
-                // redireciona para cadastro de coluna
-                uri = "/WEB-INF/nova_coluna.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else if(acao.equals("editar")) {
-                // redireciona para edição de coluna
-                try {
-                    getColuna(req, Integer.parseInt(id));
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-                uri = "/WEB-INF/editar_coluna.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else if(acao.equals("cadastrar")) {
-                // cadastra coluna e redireciona
-                doPost(req, resp);
-            } else if(acao.equals("atualizar")) {
-                // atualiza coluna e redireciona
-                doPut(req, resp);
-            } else if(acao.equals("excluir")) {
-                // exclui coluna e redireciona
-                doDelete(req, resp);
-            } else if(acao.equals("quadro") && quadro != null) {
-                getQuadro(req, quadro.getId());
-                uri = "/WEB-INF/quadro.jsp";
-                req.getRequestDispatcher(uri).forward(req, resp);
-            } else {
-                Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
-                uri = "/WEB-INF/dashboard.jsp";
-                QuadrosDAO qdr_dao = new QuadrosDAO();
-                ArrayList<Quadro> quadros = null;
-                try {
-                    quadros = qdr_dao.getQuadros(usuario);
-                } catch (ClassNotFoundException | SQLException e) {
-                    e.printStackTrace();
-                }
-                req.getSession().setAttribute("quadros", quadros);
-                req.getRequestDispatcher(uri).forward(req, resp);
-            }
-        }
-        else {
-            req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
-        }
-    }*/
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
