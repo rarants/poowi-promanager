@@ -39,6 +39,7 @@ public class QuadrosDAO {
         cartao.setId(rs.getInt("id_cartao"));
         cartao.setTitulo(rs.getString("cartao_titulo"));
         cartao.setStatus(rs.getBoolean("status"));
+        cartao.setDescricao(rs.getString("cartao_descricao"));
         cartao.setOrdem(0);
         cartao.setDataInicio(rs.getDate("data_inicio"));
         cartao.setDataTermino(rs.getDate("data_termino"));
@@ -84,7 +85,7 @@ public class QuadrosDAO {
         Usuario usuario = quadro.getUsuario();
         String sql = "SELECT q.descricao quadro_descricao, q.titulo quadro_titulo, " +
                 "cl.id id_coluna, cl.titulo coluna_titulo, " +
-                "ct.id id_cartao, ct.titulo cartao_titulo, status, " +
+                "ct.id id_cartao, ct.titulo cartao_titulo, ct.descricao cartao_descricao, status, " +
                 "data_inicio, data_termino, data_atualizacao " +
                 "FROM quadros q " +
                 "LEFT JOIN colunas cl " +

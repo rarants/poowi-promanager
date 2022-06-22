@@ -55,9 +55,10 @@ public class CartaoController extends HttpServlet {
                 novo_cartao.setStatus(false);
             else
                 novo_cartao.setStatus(true);
-
-            novo_cartao.setDataInicio(Date.valueOf(req.getParameter("dataInicio")));
-            novo_cartao.setDataTermino(Date.valueOf(req.getParameter("dataTermino")));
+            Date dataInicio = req.getParameter("dataInicio") != null ? Date.valueOf(req.getParameter("dataInicio")) : null;
+            Date dataTermino = req.getParameter("dataTermino") != null ? Date.valueOf(req.getParameter("dataTermino")) : null;
+            novo_cartao.setDataInicio(dataInicio);
+            novo_cartao.setDataTermino(dataTermino);
             novo_cartao.setColuna(coluna);
             novo_cartao.setDescricao(req.getParameter("descricao"));
             CartoesDAO crt_dao = new CartoesDAO();
@@ -95,8 +96,15 @@ public class CartaoController extends HttpServlet {
         else
             cartao_atualizado.setStatus(true);
         cartao_atualizado.setDescricao(req.getParameter("descricao"));
-        cartao_atualizado.setDataInicio(Date.valueOf(req.getParameter("dataInicio")));
-        cartao_atualizado.setDataTermino(Date.valueOf(req.getParameter("dataTermino")));
+        Date dataInicio = null, dataTermino = null;
+        if (req.getParameter("dataInicio") != null && !req.getParameter("dataInicio").equals("")) {
+            dataInicio = Date.valueOf(req.getParameter("dataInicio"));
+        }
+        if (req.getParameter("dataTermino") != null && !req.getParameter("dataTermino").equals("")) {
+            dataTermino = Date.valueOf(req.getParameter("dataTermino"));
+        }
+        cartao_atualizado.setDataInicio(dataInicio);
+        cartao_atualizado.setDataTermino(dataTermino);
         cartao_atualizado.setId(cartao.getId());
         cartao_atualizado.setColuna(coluna);
         CartoesDAO col_dao = new CartoesDAO();
