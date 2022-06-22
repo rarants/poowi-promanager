@@ -131,9 +131,14 @@ public class QuadroController extends HttpServlet {
                 e.printStackTrace();
             }
             if (novo_quadro != null) {
-                HttpSession session = req.getSession();
-                session.setAttribute("quadro", novo_quadro);
-                uri = "/WEB-INF/quadro.jsp";
+                ArrayList<Quadro> quadros = null;
+                try {
+                    quadros = qdr_dao.getQuadros(usuario);
+                } catch (SQLException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                req.getSession().setAttribute("quadros", quadros);
+                uri = "/WEB-INF/dashboard.jsp";
             } else {
                 req.setAttribute("error", "Erro ao cadastrar o quadro!");
                 uri = "/WEB-INF/novo_quadro.jsp";

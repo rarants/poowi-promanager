@@ -57,6 +57,7 @@
                     </div>
                     <div class="col-6 mb-3">
                         <label for="status" class="form-label">Finalizado</label>
+                        <br />
                         <input type="checkbox" class="form-check-input" name="status"/>
                     </div>
                     <div class="col-12 mb-3">
