@@ -118,9 +118,10 @@ as seguintes informações, email, nome de usuário e senha/
 - Usuários individuais podem cadastrar quadros /murais. Cada quadro terá um
 nome e poderá ter também uma descrição e a opção de ser público ou não.
 
-Se o quadro for público, deve ser gerada uma url pública para edição e
+>Se o quadro for público, deve ser gerada uma url pública para edição e
 visualização do quadro. Do contrário, somente o usuário proprietário do
 quadro terá permissão para acessar e editar.
+
 - Em cada quadro, o usuário poderá cadastrar colunas, seguindo o modelo
 Kanban. Cada coluna possui um título ou nome e a ordem de exibição da
 mesma dentro do quadro, que será gerada automaticamente e poderá ser
