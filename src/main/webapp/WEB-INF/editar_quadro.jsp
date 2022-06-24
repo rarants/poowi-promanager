@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-12 mb-3">
                         <label for="descricao" class="form-label">Descrição</label>
-                        <input type="textarea" class="form-control" placeholder="Informe uma descrição" name="descricao" value="${quadro.descricao}" required/>
+                        <input type="textarea" class="form-control" placeholder="Informe uma descrição" name="descricao" value="${quadro.descricao}" />
                     </div>
                 </div>
                 <div class="text-center mt-3">
