@@ -46,7 +46,7 @@
                 Voltar para o quadro
             </a>
         </div>
-        <div class="card p-2">
+        <div class="mx-auto card p-2" style="width: 55rem;">
             <div class="card-body">
                 <div class="card-title">Novo quadro</div>
                 <form action="cartao" method="post" class="formulario child">
