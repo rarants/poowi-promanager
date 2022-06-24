@@ -109,7 +109,7 @@ public class QuadrosDAO {
         ResultSet rs = null;
         ArrayList<Quadro> quadros = new ArrayList<Quadro>();
         try (Connection con = Conexao.getConnection()) {
-            stmt = con.prepareStatement("SELECT * FROM quadros WHERE id_usuario = ?");
+            stmt = con.prepareStatement("SELECT * FROM quadros WHERE id_usuario = ? ORDER BY titulo");
             stmt.setInt(1, usuario.getId());
             rs = stmt.executeQuery();
             while (rs.next()) {
