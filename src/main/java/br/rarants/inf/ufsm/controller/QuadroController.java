@@ -34,6 +34,19 @@ public class QuadroController extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("quadro", quadro);
     }
+    private void getQuadros(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Usuario usuario = (Usuario) req.getSession().getAttribute("usuario_logado");
+        String uri = "/WEB-INF/dashboard.jsp";
+        QuadrosDAO qdr_dao = new QuadrosDAO();
+        ArrayList<Quadro> quadros = null;
+        try {
+            quadros = qdr_dao.getQuadros(usuario);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        req.getSession().setAttribute("quadros", quadros);
+        req.getRequestDispatcher(uri).forward(req, resp);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -128,6 +141,7 @@ public class QuadroController extends HttpServlet {
             e.printStackTrace();
         }
         if (quadro_atualizado != null) {
+            getQuadros(req, resp);
             uri = "/WEB-INF/dashboard.jsp";
         } else {
             req.setAttribute("error", "Erro ao atualizar o quadro!");
