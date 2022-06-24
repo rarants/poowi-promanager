@@ -48,7 +48,7 @@
                 Voltar para o quadro
             </a>
         </div>
-        <div class="mx-auto card mt-4 p-2">
+        <div class="mx-auto card mt-4 p-2" style="width: 25rem;">
             <div class="card-body">
                 <div class="card-title text-center">Editar</div>
                 <form action="coluna" method="post" class="formulario child">
