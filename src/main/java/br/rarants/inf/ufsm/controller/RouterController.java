@@ -147,7 +147,7 @@ public class RouterController extends HttpServlet {
                 if (deleted == false) {
                     req.setAttribute("error", "Erro ao remover o quadro!");
                 }
-                req.setAttribute("route", "quadros");
+                req.setAttribute("quadros", "quadros");
                 getQuadros(req, resp);
                 req.getRequestDispatcher("/WEB-INF/dashboard.jsp").forward(req, resp);
             } else if(acao.equals("novo-cartao")) {
