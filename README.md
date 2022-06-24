@@ -90,7 +90,6 @@ página privada (neste caso, dashboard.jsp) ou uma mensagem de erro
 > Use ``HttpSession session = request.getSession();`` para adicionar a sessão ao login do usuário. Use ``request.getSession().invalidate();`` para encerrar 
 a sessão. 
 > Assim, você bloqueará que usuários sem acesso possam acessar páginas privadas ao retornar à url privada sem login.
-<hr/>
 
 ## :zap: O projeto :zap:
 ### Descrição do projeto
